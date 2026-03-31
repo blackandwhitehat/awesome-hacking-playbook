@@ -2,8 +2,6 @@
 
 A practical guide to maritime cybersecurity testing. Built from real-world vessel penetration testing experience and community contributions.
 
-> *"I never hacked a vessel, but... how hard could it be?"*
-
 ## Table of Contents
 
 1. [Introduction](./01-introduction.md)  -  Why vessel hacking matters
