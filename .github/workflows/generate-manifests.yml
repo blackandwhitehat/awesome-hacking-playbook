@@ -1,0 +1,48 @@
+name: Generate MANIFEST.json
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*/**.md'
+      - '!README.md'
+      - '!CONTRIBUTING.md'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate MANIFEST.json for each playbook
+        run: |
+          for dir in */; do
+            dir="${dir%/}"
+            # Skip hidden dirs and dirs without numbered markdown files
+            [[ "$dir" == .* ]] && continue
+            ls "$dir"/[0-9][0-9]-*.md &>/dev/null || continue
+
+            echo "Generating MANIFEST.json for $dir"
+            echo '{"chapters":[' > "$dir/MANIFEST.json"
+            first=true
+            for f in "$dir"/[0-9][0-9]-*.md; do
+              fname=$(basename "$f")
+              # Extract H1 title from file
+              title=$(grep -m1 '^# ' "$f" | sed 's/^# //' | sed 's/["\\]/\\&/g')
+              [ -z "$title" ] && title=$(echo "$fname" | sed 's/^[0-9]*-//;s/\.md$//;s/-/ /g')
+              $first || echo ',' >> "$dir/MANIFEST.json"
+              printf '  {"file":"%s","title":"%s"}' "$fname" "$title" >> "$dir/MANIFEST.json"
+              first=false
+            done
+            echo '' >> "$dir/MANIFEST.json"
+            echo ']}' >> "$dir/MANIFEST.json"
+          done
+
+      - name: Commit updated manifests
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add '*/MANIFEST.json'
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Auto-generate MANIFEST.json files"
+          git push
