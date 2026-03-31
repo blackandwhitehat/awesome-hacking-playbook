@@ -1,4 +1,4 @@
-# Chapter 1: Introduction to Hardware Hacking
+# Introduction to Hardware Hacking
 
 ![Slide 4: Targets](./images/slide-04.png)
 

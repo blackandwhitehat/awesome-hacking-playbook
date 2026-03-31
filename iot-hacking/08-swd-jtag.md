@@ -1,4 +1,4 @@
-# Chapter 8: SWD and JTAG - Debugging and Control
+# SWD and JTAG - Debugging and Control
 
 ![Slide 12: Demo SWD](./images/slide-12.png)
 

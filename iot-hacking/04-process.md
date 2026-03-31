@@ -1,4 +1,4 @@
-# Chapter 4: The Hardware Hacking Process
+# The Hardware Hacking Process
 
 ![Slide 8: Process](./images/slide-08.png)
 

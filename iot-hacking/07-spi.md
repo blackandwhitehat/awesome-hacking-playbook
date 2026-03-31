@@ -1,4 +1,4 @@
-# Chapter 7: SPI Flash - Dumping Firmware
+# SPI Flash - Dumping Firmware
 
 ![Slide 11: Demo SPI Flash](./images/slide-11.png)
 

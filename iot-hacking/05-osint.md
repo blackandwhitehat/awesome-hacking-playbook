@@ -1,4 +1,4 @@
-# Chapter 5: OSINT for Hardware: Finding Datasheets and Documentation
+# OSINT for Hardware: Finding Datasheets and Documentation
 
 ![Slide 9: OSINT Examples](./images/slide-09.png)
 

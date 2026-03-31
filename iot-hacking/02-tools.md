@@ -1,4 +1,4 @@
-# Chapter 2: Hardware Hacking Tools and Equipment
+# Hardware Hacking Tools and Equipment
 
 ![Slide 6: Tools](./images/slide-06.png)
 

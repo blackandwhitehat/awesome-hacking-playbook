@@ -1,4 +1,4 @@
-# Chapter 9: Firmware Analysis - From Binary to Code
+# Firmware Analysis - From Binary to Code
 
 ![Slide 13: What's Next](./images/slide-13.png)
 

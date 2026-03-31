@@ -1,4 +1,4 @@
-# Chapter 3: Linux and Raspberry Pi Setup for Hardware Hacking
+# Linux and Raspberry Pi Setup for Hardware Hacking
 
 ![Slide 7: Why Linux/RPi](./images/slide-07.png)
 

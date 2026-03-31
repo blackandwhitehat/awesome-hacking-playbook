@@ -1,4 +1,4 @@
-# Chapter 6: UART - Serial Boot Consoles and Debug Output
+# UART - Serial Boot Consoles and Debug Output
 
 ![Slide 10: Demo UART](./images/slide-10.png)
 
