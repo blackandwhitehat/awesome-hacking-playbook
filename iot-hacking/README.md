@@ -38,7 +38,7 @@ This knowledge can be used for both good and bad purposes. Use it ethically:
 
 Start with the introduction to understand your targets and goals, then work through the tools section to build your kit. Follow the process guide step-by-step for your first hardware hack. Jump to specific chapters (UART, SPI, SWD) as needed for your target device.
 
-Each chapter includes practical examples, command syntax, and real-world scenarios based on actual hardware hacking experiences.
+Chapters include command syntax and examples where available. This playbook is a living document and some sections are still being expanded.
 
 ## Quick Links
 

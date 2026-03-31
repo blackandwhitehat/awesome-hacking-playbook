@@ -94,19 +94,18 @@ None of this is exotic or rare. It's standard practice. Resources are limited. S
 
 ## What This Playbook Covers
 
-This guide walks you through the complete process:
+This guide covers core hardware hacking concepts and techniques:
 
-- Tools you need (and which ones to buy first)
-- How to set up a Raspberry Pi and PiFex for hacking
-- The standard process for any device
-- How to find information about chips and devices
-- How to connect to and read from UART
-- How to dump SPI flash without desoldering
-- How to use SWD or JTAG to read and modify firmware
-- How to analyze firmware with Ghidra
-- How to set up your own hardware hacking lab
+- Tools and equipment for getting started
+- Setting up a Linux environment for hardware hacking
+- The standard approach to any new device
+- OSINT for chip identification and datasheets
+- UART serial interfaces
+- SPI flash dumping
+- SWD and JTAG debug interfaces
+- Firmware analysis with Ghidra
 
-Every chapter includes practical examples and real commands you can run.
+This is a community-sourced, living document. Some sections are more complete than others.
 
 ## Your First Challenge
 

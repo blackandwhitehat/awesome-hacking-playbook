@@ -1,12 +1,19 @@
-{"chapters":[
-  {"file":"01-introduction.md","title":"Introduction"},
-  {"file":"02-vessel-networks.md","title":"Vessel Network Overview"},
-  {"file":"03-nmea-0183.md","title":"NMEA 0183"},
-  {"file":"04-nmea-2000.md","title":"NMEA 2000"},
-  {"file":"05-nmea-vs-automotive.md","title":"NMEA 2000 vs Automotive CAN Bus"},
-  {"file":"06-hardware.md","title":"Hardware Interfaces"},
-  {"file":"07-software.md","title":"Software & Simulators"},
-  {"file":"08-vulnerabilities.md","title":"CAN Bus Vulnerabilities"},
-  {"file":"09-pgns.md","title":"Parameter Group Numbers (PGNs)"},
-  {"file":"10-bus-priority.md","title":"Bus Priority & Address Claiming"}
-]}
+{
+  "id": "vessel-hacking",
+  "title": "VESSEL HACKING",
+  "icon": "🔒",
+  "description": "Maritime cybersecurity from the NMEA 2000 bus up.",
+  "chapters": [
+    {"file": "README.md", "title": "Overview", "num": ""},
+    {"file": "01-introduction.md", "title": "Introduction", "num": "01"},
+    {"file": "02-vessel-networks.md", "title": "Vessel Network Overview", "num": "02"},
+    {"file": "03-nmea-0183.md", "title": "NMEA 0183", "num": "03"},
+    {"file": "04-nmea-2000.md", "title": "NMEA 2000", "num": "04"},
+    {"file": "05-nmea-vs-automotive.md", "title": "NMEA 2000 vs Automotive CAN Bus", "num": "05"},
+    {"file": "06-hardware.md", "title": "Hardware Interfaces", "num": "06"},
+    {"file": "07-software.md", "title": "Software & Simulators", "num": "07"},
+    {"file": "08-vulnerabilities.md", "title": "CAN Bus Vulnerabilities", "num": "08"},
+    {"file": "09-pgns.md", "title": "Parameter Group Numbers (PGNs)", "num": "09"},
+    {"file": "10-bus-priority.md", "title": "Bus Priority & Address Claiming", "num": "10"}
+  ]
+}

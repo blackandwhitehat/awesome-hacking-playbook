@@ -22,24 +22,61 @@ jobs:
         run: |
           for dir in */; do
             dir="${dir%/}"
-            # Skip hidden dirs and dirs without numbered markdown files
             [[ "$dir" == .* ]] && continue
             ls "$dir"/[0-9][0-9]-*.md &>/dev/null || continue
 
             echo "Generating MANIFEST.json for $dir"
-            echo '{"chapters":[' > "$dir/MANIFEST.json"
-            first=true
-            for f in "$dir"/[0-9][0-9]-*.md; do
-              fname=$(basename "$f")
-              # Extract H1 title from file
-              title=$(grep -m1 '^# ' "$f" | sed 's/^# //' | sed 's/["\\]/\\&/g')
-              [ -z "$title" ] && title=$(echo "$fname" | sed 's/^[0-9]*-//;s/\.md$//;s/-/ /g')
-              $first || echo ',' >> "$dir/MANIFEST.json"
-              printf '  {"file":"%s","title":"%s"}' "$fname" "$title" >> "$dir/MANIFEST.json"
-              first=false
-            done
-            echo '' >> "$dir/MANIFEST.json"
-            echo ']}' >> "$dir/MANIFEST.json"
+
+            # Preserve existing metadata if MANIFEST.json exists
+            if [ -f "$dir/MANIFEST.json" ]; then
+              ID=$(python3 -c "import json; d=json.load(open('$dir/MANIFEST.json')); print(d.get('id',''))" 2>/dev/null || echo "")
+              TITLE=$(python3 -c "import json; d=json.load(open('$dir/MANIFEST.json')); print(d.get('title',''))" 2>/dev/null || echo "")
+              ICON=$(python3 -c "import json; d=json.load(open('$dir/MANIFEST.json')); print(d.get('icon',''))" 2>/dev/null || echo "")
+              DESC=$(python3 -c "import json; d=json.load(open('$dir/MANIFEST.json')); print(d.get('description',''))" 2>/dev/null || echo "")
+            fi
+
+            # Defaults if metadata missing
+            [ -z "$ID" ] && ID="$dir"
+            [ -z "$TITLE" ] && TITLE=$(echo "$dir" | tr '-' ' ' | tr '[:lower:]' '[:upper:]')
+
+            # Build chapters array via Python for proper JSON
+            python3 -c "
+import json, glob, re, os
+
+chapters = []
+
+# Add README.md as Overview if it exists
+if os.path.exists('$dir/README.md'):
+    chapters.append({'file': 'README.md', 'title': 'Overview', 'num': ''})
+
+# Add numbered chapters
+for f in sorted(glob.glob('$dir/[0-9][0-9]-*.md')):
+    fname = os.path.basename(f)
+    num = fname[:2]
+    # Extract H1 title
+    title = ''
+    with open(f) as fh:
+        for line in fh:
+            if line.startswith('# '):
+                title = line[2:].strip()
+                break
+    if not title:
+        title = re.sub(r'^[0-9]+-', '', fname.replace('.md','').replace('-',' '))
+    chapters.append({'file': fname, 'title': title, 'num': num})
+
+manifest = {'id': '$ID', 'title': '$TITLE'}
+icon = '''$ICON'''
+desc = '''$DESC'''
+if icon:
+    manifest['icon'] = icon
+if desc:
+    manifest['description'] = desc
+manifest['chapters'] = chapters
+
+with open('$dir/MANIFEST.json', 'w') as out:
+    json.dump(manifest, out, indent=2, ensure_ascii=False)
+    out.write('\n')
+"
           done
 
       - name: Commit updated manifests
