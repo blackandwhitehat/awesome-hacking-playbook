@@ -2,6 +2,17 @@
 
 A practical guide to maritime cybersecurity testing. Built from real-world vessel penetration testing experience and community contributions.
 
+## Contributing
+
+See the [main contribution guide](../README.md#-how-to-contribute). For vessel-specific content, we especially welcome:
+
+- Real-world engagement writeups (anonymized)
+- New tool discoveries or reviews
+- Protocol analysis and PGN documentation
+- Lab setup guides for different hardware
+- Defensive recommendations and blue team perspectives
+
+
 ## Table of Contents
 
 1. [Introduction](./01-introduction.md)  -  Why vessel hacking matters
@@ -33,13 +44,3 @@ Maritime vessels run on decades-old protocols with zero authentication, no encry
 The same CAN bus vulnerabilities that car hackers have been exploiting for years apply directly to boats, just at 250 kbps instead of 500 kbps.
 
 Autonomy is creeping into every hull, one system at a time. More systems = more attack surface.
-
-## Contributing
-
-See the [main contribution guide](../README.md#-how-to-contribute). For vessel-specific content, we especially welcome:
-
-- Real-world engagement writeups (anonymized)
-- New tool discoveries or reviews
-- Protocol analysis and PGN documentation
-- Lab setup guides for different hardware
-- Defensive recommendations and blue team perspectives

@@ -2,6 +2,17 @@
 
 A practical guide to hardware hacking with Linux. Built from real-world embedded device testing experience and community contributions.
 
+## Contributing
+
+See the [main contribution guide](../README.md#-how-to-contribute). For IoT/hardware-specific content, we especially welcome:
+
+- Real-world device teardown writeups
+- New tool discoveries or reviews
+- Protocol analysis and chip documentation
+- Lab setup guides and equipment reviews
+- Firmware extraction walkthroughs
+
+
 ## Table of Contents
 
 1. [Introduction](./01-introduction.md)  -  Why hardware hacking matters
@@ -42,16 +53,6 @@ This knowledge can be used for both good and bad purposes. Use it ethically:
 - Report bugs to vendors through HackerOne, vendor programs, or responsible disclosure platforms
 - Build things, make them better, help make the world safer
 - Do not use this to cause harm
-
-## Contributing
-
-See the [main contribution guide](../README.md#-how-to-contribute). For IoT/hardware-specific content, we especially welcome:
-
-- Real-world device teardown writeups
-- New tool discoveries or reviews
-- Protocol analysis and chip documentation
-- Lab setup guides and equipment reviews
-- Firmware extraction walkthroughs
 
 ## Attribution
 
