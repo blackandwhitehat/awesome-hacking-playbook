@@ -47,7 +47,7 @@ chapters = []
 
 # Add README.md as Overview if it exists
 if os.path.exists('$dir/README.md'):
-    chapters.append({'file': 'README.md', 'title': 'Overview', 'num': ''})
+    chapters.append({'file': 'README.md', 'title': 'Overview', 'num': '00'})
 
 # Add numbered chapters
 for f in sorted(glob.glob('$dir/[0-9][0-9]-*.md')):
