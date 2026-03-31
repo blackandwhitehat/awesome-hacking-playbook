@@ -1,0 +1,73 @@
+{
+  "id": "iot-hacking",
+  "title": "IOT HACKING",
+  "icon": "🔌",
+  "description": "Hardware hacking with Linux. UART, SPI, SWD, firmware extraction and analysis.",
+  "chapters": [
+    {
+      "file": "README.md",
+      "title": "Overview",
+      "num": ""
+    },
+    {
+      "file": "01-introduction.md",
+      "title": "Introduction to Hardware Hacking",
+      "num": "1"
+    },
+    {
+      "file": "02-tools.md",
+      "title": "Hardware Hacking Tools and Equipment",
+      "num": "2"
+    },
+    {
+      "file": "03-linux-setup.md",
+      "title": "Linux and Raspberry Pi Setup",
+      "num": "3"
+    },
+    {
+      "file": "04-process.md",
+      "title": "The Hardware Hacking Process",
+      "num": "4"
+    },
+    {
+      "file": "05-osint.md",
+      "title": "OSINT: Finding Datasheets and Documentation",
+      "num": "5"
+    },
+    {
+      "file": "06-uart.md",
+      "title": "UART: Serial Boot Consoles",
+      "num": "6"
+    },
+    {
+      "file": "07-spi.md",
+      "title": "SPI Flash: Dumping Firmware",
+      "num": "7"
+    },
+    {
+      "file": "08-swd-jtag.md",
+      "title": "SWD and JTAG: Debugging and Control",
+      "num": "8"
+    },
+    {
+      "file": "09-firmware-analysis.md",
+      "title": "Firmware Analysis with Ghidra",
+      "num": "9"
+    },
+    {
+      "file": "tools.md",
+      "title": "Quick Reference: Tools",
+      "num": ""
+    },
+    {
+      "file": "lab-setup.md",
+      "title": "Building Your Hardware Hacking Lab",
+      "num": ""
+    },
+    {
+      "file": "resources.md",
+      "title": "Resources and Further Learning",
+      "num": ""
+    }
+  ]
+}

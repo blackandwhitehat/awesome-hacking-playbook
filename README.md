@@ -1,4 +1,4 @@
-# 🎯 Awesome Hacking Playbooks
+# 🔓 Awesome Hacking Playbook
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
@@ -11,7 +11,7 @@
 | Playbook | Status | Description |
 |----------|--------|-------------|
 | [Vessel Hacking](./vessel-hacking/) | 🚧 Active | Maritime cybersecurity: NMEA 0183/2000, CAN bus attacks, GPS spoofing, shipboard networks |
-| IoT Hacking | 📋 Planned | Embedded devices, firmware analysis, UART/JTAG/SPI, RF protocols, smart home/industrial |
+| [IoT Hacking](./iot-hacking/) | 🚧 Active | Hardware hacking with Linux: UART, SPI, SWD/JTAG, firmware extraction, Ghidra analysis |
 | Phone Hacking (Phreaking) | 📋 Planned | SS7, VoIP/SIP, cellular baseband, SIM cloning, modern phreaking |
 | Satellite Hacking | 📋 Planned | SatCom, VSAT, ground station security |
 
