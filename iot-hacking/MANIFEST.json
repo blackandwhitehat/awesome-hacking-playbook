@@ -1,10 +1,10 @@
 {
   "id": "iot-hacking",
-  "title": "IOT HACKING",
+  "title": "IOT HACKING PLAYBOOK",
   "icon": "🔒",
   "description": "Hardware hacking with Linux. UART, SPI, SWD, firmware extraction and analysis.",
   "chapters": [
-    {"file": "README.md", "title": "Overview", "num": ""},
+    {"file": "README.md", "title": "Overview", "num": "00"},
     {"file": "01-introduction.md", "title": "Introduction to Hardware Hacking", "num": "01"},
     {"file": "02-tools.md", "title": "Hardware Hacking Tools and Equipment", "num": "02"},
     {"file": "03-linux-setup.md", "title": "Linux and Raspberry Pi Setup for Hardware Hacking", "num": "03"},
