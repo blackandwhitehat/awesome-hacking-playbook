@@ -93,39 +93,24 @@ Creates a virtual serial pair. Feed data into one, read from the other.
 
 A complete home lab with zero hardware:
 
-```
-NMEA Simulator (kave.fi)
-        │
-        ▼
-    com0com / socat
-    (virtual serial pair)
-        │
-        ▼
-    OpenCPN
-    (chart plotter target)
+```mermaid
+graph TD
+    SIM[NMEA Simulator<br>kave.fi] --> COM[com0com / socat<br>virtual serial pair]
+    COM --> OPN[OpenCPN<br>chart plotter target]
 ```
 
 Add attack scripts in the middle for MITM testing:
 
-```
-Simulator → COM5 ←→ COM6 → Python script → COM7 ←→ COM8 → OpenCPN
+```mermaid
+graph LR
+    SIM[Simulator] --> C5[COM5] --> C6[COM6] --> PY[Python Script] --> C7[COM7] --> C8[COM8] --> OPN[OpenCPN]
 ```
 
 Or with a physical interface:
 
-```
-M5Stack Atomic CAN
-    (WiFi hotspot)
-        │
-        ▼
-    Your laptop
-    (browser or Python)
-        │
-        ▼
-    NMEA 2000 backbone
-    (real or simulated)
-        │
-        ▼
-    Chart plotter
-    (Garmin, OpenCPN, etc.)
+```mermaid
+graph TD
+    M5[M5Stack Atomic CAN<br>WiFi hotspot] --> LAP[Your Laptop<br>browser or Python]
+    LAP --> BUS[NMEA 2000 Backbone<br>real or simulated]
+    BUS --> CP[Chart Plotter<br>Garmin / OpenCPN]
 ```

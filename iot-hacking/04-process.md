@@ -187,27 +187,16 @@ telnet localhost 4444
 
 Not every device has every interface. Choose based on what's available:
 
-**If you see 4 pads and the datasheet mentions UART:**
-- Use a USB-to-serial adapter
-- Connect RX, TX, GND
-- Use screen or minicom
-- Read the boot console and firmware loading information
-
-**If you see SPI (4 wires) and can identify the flash chip:**
-- Use flashrom to dump directly
-- No desoldering needed (usually)
-- Fastest path to firmware
-
-**If you see SWD or JTAG header:**
-- Use OpenOCD with the appropriate adapter
-- Can halt the CPU, dump memory, set breakpoints
-- More control than SPI but requires more setup
-
-**If there's no obvious interface:**
-- Try desoldering the flash chip
-- Read it with a programmer
-- Re-solder it back on
-- This is the hard way but always works
+```mermaid
+graph TD
+    START[Opened the Device] --> UART{See 4 pads?<br>Datasheet mentions UART?}
+    UART -->|Yes| U1[USB-to-serial adapter<br>Connect RX, TX, GND<br>screen or minicom]
+    UART -->|No| SPI{See SPI header?<br>Can identify flash chip?}
+    SPI -->|Yes| S1[flashrom dump directly<br>No desoldering needed<br>Fastest path to firmware]
+    SPI -->|No| SWD{See SWD/JTAG header?}
+    SWD -->|Yes| J1[OpenOCD + adapter<br>Halt CPU, dump memory<br>Set breakpoints]
+    SWD -->|No| HARD[Desolder flash chip<br>Read with programmer<br>Re-solder back on<br>Hard way, always works]
+```
 
 ## Real-World Example: Dumping a Smart Switch
 
