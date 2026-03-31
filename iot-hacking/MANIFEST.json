@@ -1,7 +1,7 @@
 {
   "id": "iot-hacking",
   "title": "IOT HACKING PLAYBOOK",
-  "icon": "🔒",
+  "icon": "🔌",
   "description": "Hardware hacking with Linux. UART, SPI, SWD, firmware extraction and analysis.",
   "chapters": [
     {"file": "README.md", "title": "Overview", "num": "00"},

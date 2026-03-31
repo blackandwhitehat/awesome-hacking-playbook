@@ -1,7 +1,7 @@
 {
   "id": "vessel-hacking",
   "title": "VESSEL HACKING PLAYBOOK",
-  "icon": "🔒",
+  "icon": "🚢",
   "description": "Maritime cybersecurity from the NMEA 2000 bus up.",
   "chapters": [
     {"file": "README.md", "title": "Overview", "num": "00"},
