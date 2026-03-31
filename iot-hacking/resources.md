@@ -6,25 +6,25 @@ This chapter is a curated list of resources to deepen your hardware hacking know
 
 ### ARM and Processor Resources
 
-- **ARM Cortex-M Documentation** - https://developer.arm.com/
-- **CMSIS SVD Repository** - https://github.com/ARM-Software/CMSIS-SVD
-- **ARM Instruction Set Reference** - https://developer.arm.com/documentation/
+- [ARM Cortex-M Documentation](https://developer.arm.com/) - Processor docs, memory maps, instruction encodings
+- [CMSIS SVD Repository](https://github.com/ARM-Software/CMSIS-SVD) - Register definitions for ARM chips
+- [ARM Instruction Set Reference](https://developer.arm.com/documentation/) - Architecture reference manuals
 
 Read the ARM documentation when you need to understand processor behavior, memory maps, or instruction encodings.
 
 ### Ghidra
 
-- **Ghidra Home** - https://ghidra-sre.org/
-- **Ghidra Documentation** - https://ghidra-sre.org/releaseNotes.html
-- **Ghidra GitHub** - https://github.com/NationalSecurityAgency/ghidra
+- [Ghidra Home](https://ghidra-sre.org/) - NSA's free reverse engineering suite
+- [Ghidra GitHub](https://github.com/NationalSecurityAgency/ghidra) - Source, issues, and community
+- [Ghidra Release Notes](https://ghidra-sre.org/releaseNotes.html) - Version history and new features
 
 Ghidra has extensive docs and a helpful community on the GitHub repository.
 
 ### Tools Documentation
 
-- **Flashrom Manual** - https://www.flashrom.org/Documentation
-- **OpenOCD Documentation** - http://openocd.org/doc/
-- **Linux man pages** - man flashrom, man screen, man openocd
+- [Flashrom Manual](https://www.flashrom.org/Documentation) - SPI flash reading/writing
+- [OpenOCD Documentation](http://openocd.org/doc/) - On-chip debugger for SWD/JTAG
+- Linux man pages: `man flashrom`, `man screen`, `man openocd`
 
 These are your quick reference for command-line tools.
 
@@ -32,39 +32,41 @@ These are your quick reference for command-line tools.
 
 ### Video Tutorials
 
-- **JAXLUG 2025: Hardware Hacking with Linux** - https://www.youtube.com/watch?v=7pVtVpKTGqs (The source talk for this playbook)
-- **Matt Brown's Hardware Hacking Channel** - https://www.youtube.com/c/mattbrowneng (Excellent real-world hacking demonstrations)
-- **Ghidra Tutorials** - Multiple tutorials on YouTube for different experience levels
-- **OpenOCD Tutorials** - Search "OpenOCD tutorial" for setup guides
+- [JAXLUG 2025: Hardware Hacking with Linux](https://www.youtube.com/watch?v=7pVtVpKTGqs) - The source talk for this playbook
+- [Matt Brown's Hardware Hacking Channel](https://www.youtube.com/c/mattbrowneng) - Excellent real-world hacking demonstrations
+- [LiveOverflow](https://www.youtube.com/c/LiveOverflow) - Security research and CTF walkthroughs
+- [stacksmashing](https://www.youtube.com/c/stacksmashing) - Hardware security and reverse engineering
 
 ### Written Guides
 
-- **Reverse Engineering by Zeroing** - Technical blogs on firmware analysis
-- **Adafruit Learning System** - https://learn.adafruit.com/ (Includes reverse engineering and GPIO tutorials)
-- **CaptureTheFlag (CTF) writeups** - https://github.com/topics/ctf-writeups (Real examples of reverse engineering)
+- [Adafruit Learning System](https://learn.adafruit.com/) - Includes reverse engineering and GPIO tutorials
+- [CTF Writeups on GitHub](https://github.com/topics/ctf-writeups) - Real examples of reverse engineering
+- [Azeria Labs ARM Assembly](https://azeria-labs.com/writing-arm-assembly-part-1/) - ARM exploitation tutorials
 
 ## Communities and Collaboration
 
 ### Online Communities
 
-- **r/hardwarehacking** - Reddit community dedicated to hardware hacking
-- **r/reverseengineering** - Broader reverse engineering community
-- **Defcon Groups** - Local Defcon communities in most cities (search "Defcon" + your city)
-- **2600 The Hacker Quarterly** - Magazine and meetup group (2600meetings.com)
+- [r/hardwarehacking](https://www.reddit.com/r/hardwarehacking/) - Reddit community dedicated to hardware hacking
+- [r/reverseengineering](https://www.reddit.com/r/reverseengineering/) - Broader reverse engineering community
+- [r/netsec](https://www.reddit.com/r/netsec/) - Network security news and discussion
+- [DEF CON Groups](https://defcongroups.org/) - Local DEF CON communities in most cities
+- [2600 The Hacker Quarterly](https://www.2600.com/) - Magazine and [meetup groups](https://www.2600.com/meetings/)
 
 ### Discord Servers and Chat
 
-- **Matt Brown's Hardware Hacking Discord** - Active collaboration on real devices
-- **Chaos Communication Club** - https://www.ccc.de/ (European hacker community)
-- **Hack Space Communities** - Look for local Hack Spaces, Makerspaces, or Fab Labs in your area
+- [Matt Brown's Hardware Hacking Discord](https://discord.gg/mattbrown) - Active collaboration on real devices
+- [Chaos Communication Club](https://www.ccc.de/) - European hacker community
+- [Hack Spaces](https://hackerspaces.org/) - Find local Hack Spaces, Makerspaces, or Fab Labs
 
 ### Conferences and Events
 
-- **Defcon** - Las Vegas, August. Premier hacker conference with hardware villages and badge hacking
-- **Black Hat** - Multiple locations. Security-focused, includes hardware tracks
-- **Chaos Communication Congress (34C3)** - Annual European conference
-- **Maker Faires** - Local events showcasing makers and tinkerers
-- **Local Security Meetups** - OWASP, local tech meetups, hacker spaces
+- [DEF CON](https://defcon.org/) - Las Vegas, August. Premier hacker conference with hardware villages and badge hacking
+- [Black Hat](https://www.blackhat.com/) - Multiple locations. Security-focused, includes hardware tracks
+- [Chaos Communication Congress](https://events.ccc.de/) - Annual European conference
+- [Maker Faire](https://makerfaire.com/) - Local events showcasing makers and tinkerers
+- [BSides](http://www.securitybsides.com/) - Community-driven security conferences worldwide
+- [OWASP Events](https://owasp.org/events/) - Local security meetups and chapter meetings
 
 Conferences are invaluable for learning, networking, and getting inspired. Many share presentation materials and videos online later.
 
@@ -72,9 +74,9 @@ Conferences are invaluable for learning, networking, and getting inspired. Many 
 
 ### Bug Bounty Platforms
 
-- **HackerOne** - https://www.hackerone.com/ (Largest platform, many hardware programs)
-- **Bugcrowd** - https://www.bugcrowd.com/
-- **Synack** - https://www.synack.com/
+- [HackerOne](https://www.hackerone.com/) - Largest platform, many hardware programs
+- [Bugcrowd](https://www.bugcrowd.com/) - Bug bounty and vulnerability disclosure
+- [Synack](https://www.synack.com/) - Invite-only security testing
 
 These platforms connect researchers with companies that want security testing. Many have hardware programs (Ring, Logitech, etc).
 
@@ -82,11 +84,11 @@ These platforms connect researchers with companies that want security testing. M
 
 If you find a vulnerability and the manufacturer isn't on a bug bounty platform:
 
-1. **Find contact info** - Look for a security.txt file (/.well-known/security.txt) or a security page
-2. **Draft a report** - Clearly describe the vulnerability, impact, and proof-of-concept
-3. **Send it** - Use PGP encryption if they provide a key
-4. **Wait** - Give them reasonable time (typically 30-90 days) to fix it
-5. **Disclose responsibly** - If they don't respond, you can disclose publicly after a reasonable period
+1. Find contact info: look for a `security.txt` file (`/.well-known/security.txt`) or a security page
+2. Draft a report: clearly describe the vulnerability, impact, and proof-of-concept
+3. Send it: use PGP encryption if they provide a key
+4. Wait: give them reasonable time (typically 30-90 days) to fix it
+5. Disclose responsibly: if they don't respond, you can disclose publicly after a reasonable period
 
 **Never:**
 - Test on devices you don't own without permission
@@ -94,138 +96,70 @@ If you find a vulnerability and the manufacturer isn't on a bug bounty platform:
 - Demand payment (this is extortion)
 - Disclose the vulnerability publicly before giving the vendor time to fix
 
-Responsible disclosure protects users and maintains your reputation.
-
 ## Hardware Hacking Specific Guides
 
 ### Chip Identification and Datasheets
 
-- **fccid.io** - https://fccid.io/ (FCC filing database)
-- **datasheetspdf.com** - Mirror of many datasheets
-- **alldatasheet.com** - Another datasheet mirror
-- **Chip manufacturer websites** - Official datasheets from vendors
-- **GitHub** - Search "[chip model] datasheet" to find community mirrors
+- [FCC ID Lookup](https://fccid.io/) - FCC filing database with internal photos
+- [Datasheets PDF](https://datasheetspdf.com/) - Mirror of many datasheets
+- [All Datasheet](https://www.alldatasheet.com/) - Another datasheet mirror
+- [Octopart](https://octopart.com/) - Component search with datasheets
 
 ### Reverse Engineering Resources
 
-- **IDA Pro** - https://www.hex-rays.com/ida-pro/ (Commercial, but many use Ghidra now)
-- **Binary Ninja** - https://binary.ninja/ (Modern disassembler, alternative to Ghidra)
-- **Radare2** - https://rada.re/ (Open-source, command-line focused)
-- **Capstone** - https://www.capstone-engine.org/ (Disassembly library)
-
-Ghidra is free and excellent, but these alternatives are worth exploring as you advance.
-
-### Device-Specific Resources
-
-Search for "[device name] reverse engineering" on GitHub to find:
-- Extracted firmware
-- Detailed teardowns
-- Vulnerability disclosures
-- Custom firmwares
-- Datasheets and schematics
-
-Examples:
-- ESP32 devices - Massive community, extensive documentation
-- Ring doorbells - Multiple researchers have analyzed them
-- Xiaomi devices - Active reverse engineering community
-- Common WiFi routers - TP-Link, Linksys, D-Link, etc have public analysis
+- [Ghidra](https://ghidra-sre.org/) - Free, open-source reverse engineering suite
+- [IDA Pro](https://www.hex-rays.com/ida-pro/) - Commercial disassembler
+- [Binary Ninja](https://binary.ninja/) - Modern disassembler, alternative to Ghidra
+- [Radare2](https://rada.re/) - Open-source, command-line focused
+- [Capstone Engine](https://www.capstone-engine.org/) - Disassembly library
 
 ## Books
 
-- **Hands-On Reverse Engineering: Windbg** - Ashwani Sidda (Practical reverse engineering)
-- **The Hacker Playbook** series - Peter Kim (Practical security testing guides)
-- **ARM System Developer's Guide** - Andrew Sloss, Dominic Symes, John Upton (Deep technical resource)
-- **The Hardware Hacking Handbook** - Colin O'Flynn, Jasper van Woudenberg (Focused on hardware)
+- [The Hardware Hacking Handbook](https://nostarch.com/hardwarehacking) - Colin O'Flynn, Jasper van Woudenberg
+- [Practical IoT Hacking](https://nostarch.com/practical-iot-hacking) - Fotios Chantzis et al
+- [The Hacker Playbook 3](https://www.thehackerplaybook.com/) - Peter Kim (Practical security testing)
+- [ARM System Developer's Guide](https://www.elsevier.com/books/arm-system-developers-guide/sloss/978-1-55860-874-0) - Andrew Sloss, Dominic Symes, John Upton
 
 ## Tools and Projects to Study
 
 ### Open Source Hardware Projects
 
-- **Arduino** - https://www.arduino.cc/ (Beginner-friendly microcontroller)
-- **Raspberry Pi** - https://www.raspberrypi.com/ (What we're using for hacking)
-- **ESP32** - https://www.espressif.com/ (WiFi/Bluetooth SoC, very popular in IoT)
-- **STM32** - https://www.st.com/ (ARM Cortex-M family, common in products)
-
-Study these to understand how microcontrollers are designed and used.
+- [Arduino](https://www.arduino.cc/) - Beginner-friendly microcontroller
+- [Raspberry Pi](https://www.raspberrypi.com/) - What we're using for hacking
+- [ESP32 (Espressif)](https://www.espressif.com/) - WiFi/Bluetooth SoC, very popular in IoT
+- [STM32 (ST Micro)](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) - ARM Cortex-M family, common in products
 
 ### Firmware Project Examples
 
-- **OpenWrt** - https://openwrt.org/ (Custom router firmware)
-- **LibreMesh** - https://libremesh.org/ (Community mesh networks)
-- **ESPHome** - https://esphome.io/ (Home automation with ESP devices)
-- **RIOT** - https://www.riot-os.org/ (Operating system for IoT)
-
-These are educational and show how to build real systems. Some can be flashed onto devices to replace proprietary firmware.
-
-## Training and Certifications
-
-- **OSCP** (Offensive Security Certified Professional) - Includes some hardware
-- **GCIH** (GIAC Certified Incident Handler) - Network-focused but useful context
-- **CEH** (Certified Ethical Hacker) - Broad security knowledge
-
-Most important: **hands-on practice beats certifications**. Build projects, hack devices, contribute to communities.
-
-## Academic Resources
-
-- **Papers on IACR.org** - Cryptography and security research
-- **ArXiv** - https://arxiv.org/ (Preprints of academic papers)
-- **IEEE Xplore** - https://ieeexplore.ieee.org/ (Published research)
-- **ACM Digital Library** - https://dl.acm.org/ (Computer science research)
-
-These databases contain detailed security research. Often, you'll find papers analyzing the exact devices you're hacking.
-
-## Hardware Vendors and Learning Resources
-
-### Microchip (ATMEL)
-
-- **ATMEL Studio** - IDE for AVR and ARM microcontrollers
-- **Tutorials and example code**
-- **Community forum**
-
-### STMicroelectronics (ST)
-
-- **STM32CubeIDE** - Official development environment
-- **Reference manuals** - Detailed MCU documentation
-- **Community** - ST has an active support community
-
-### Espressif (ESP)
-
-- **ESP-IDF** - Official development framework
-- **Extensive documentation** - From setup to advanced features
-- **Discord community** - Very active and helpful
-- **GitHub** - Reference projects and examples
-
-These vendors provide excellent documentation and free tools. Learning with official tools first makes reverse engineering easier later.
+- [OpenWrt](https://openwrt.org/) - Custom router firmware
+- [LibreMesh](https://libremesh.org/) - Community mesh networks
+- [ESPHome](https://esphome.io/) - Home automation with ESP devices
+- [RIOT OS](https://www.riot-os.org/) - Operating system for IoT
 
 ## Staying Current
 
 ### Blogs and News
 
-- **Hacker News** - https://news.ycombinator.com/ (Tech news, often includes security)
-- **OWASP Blog** - https://owasp.org/blog/ (Application and system security)
-- **Infosec subreddits** - r/netsec, r/learnprogramming, r/hardwarehacking
+- [Hacker News](https://news.ycombinator.com/) - Tech news, often includes security
+- [OWASP Blog](https://owasp.org/blog/) - Application and system security
+- [Exploit Database](https://www.exploit-db.com/) - Published exploits and advisories
 
 ### Podcasts
 
-- **Security Now!** - https://www.grc.com/SecurityNow.htm (Weekly security news and deep dives)
-- **The Hacker Digest** - News and interviews from the hacking community
-- **Darknet Diaries** - https://darknetdiaries.com/ (True stories from the hacking world)
-
-### Mailing Lists
-
-- **Google Security Research** - Announces disclosed vulnerabilities
-- **Exploit Database** - https://www.exploit-db.com/ (Published exploits and advisories)
+- [Hackers IRL](https://hackersirl.com) - Raw tales from infosec conferences
+- [Security Now!](https://www.grc.com/SecurityNow.htm) - Weekly security news and deep dives
+- [Darknet Diaries](https://darknetdiaries.com/) - True stories from the hacking world
 
 ## Practice Projects
 
 After reading this playbook, try these in order:
 
-1. **Find UART on a device** - Easiest first step, just read console output
-2. **Dump firmware via SPI** - Learn flashrom, practice soldering
-3. **Analyze in Ghidra** - Identify functions, find strings
-4. **Patch a value** - Change a timeout or constant, verify it works
-5. **Find a vulnerability** - Document your findings responsibly
-6. **Report the bug** - Follow responsible disclosure, help the vendor fix it
+1. Find UART on a device: easiest first step, just read console output
+2. Dump firmware via SPI: learn flashrom, practice soldering
+3. Analyze in Ghidra: identify functions, find strings
+4. Patch a value: change a timeout or constant, verify it works
+5. Find a vulnerability: document your findings responsibly
+6. Report the bug: follow responsible disclosure, help the vendor fix it
 
 Each project teaches multiple skills and builds confidence.
 
@@ -233,24 +167,11 @@ Each project teaches multiple skills and builds confidence.
 
 Once you've learned:
 
-1. **Write tutorials** - Share what you learned on your blog or GitHub
-2. **Create tools** - Build scripts that solve problems you encountered
-3. **Participate in communities** - Answer others' questions, collaborate
-4. **Present at conferences** - Share your findings and techniques
-5. **Contribute to open source** - Help projects like Ghidra, Flashrom, OpenOCD
-6. **Help vendors** - Report vulnerabilities professionally, help them improve
+1. Write tutorials: share what you learned on your blog or GitHub
+2. Create tools: build scripts that solve problems you encountered
+3. Participate in communities: answer others' questions, collaborate
+4. Present at conferences: share your findings and techniques
+5. Contribute to open source: help projects like [Ghidra](https://github.com/NationalSecurityAgency/ghidra), [Flashrom](https://www.flashrom.org/), [OpenOCD](http://openocd.org/)
+6. Help vendors: report vulnerabilities professionally, help them improve
 
 The security community grows through knowledge sharing.
-
-## Final Advice
-
-- **Start simple** - Don't grab the most complex device first
-- **Document everything** - Future you will thank present you
-- **Ask for help** - Communities are welcoming to genuine learners
-- **Be ethical** - Always ask before testing, always report responsibly
-- **Keep learning** - Technology changes fast; stay curious
-- **Have fun** - Hardware hacking is rewarding and interesting
-
-The resources here are endless. Follow your curiosity. Join communities. Go to events. Build things. The more you practice, the better you get.
-
-Welcome to the world of hardware hacking.

@@ -224,11 +224,11 @@ https://github.com/openocd-org/openocd
 
 ## Websites
 
-- **fccid.io** - FCC filings and documentation
-- **datasheetspdf.com** - Chip datasheets
-- **pinout.xyz** - Raspberry Pi and other pinouts
-- **iFixit.com** - Device teardowns
-- **GitHub** - Code and research
+- [fccid.io](https://fccid.io/) - FCC filings and documentation
+- [datasheetspdf.com](https://datasheetspdf.com/) - Chip datasheets
+- [pinout.xyz](https://pinout.xyz/) - Raspberry Pi and other pinouts
+- [iFixit](https://www.ifixit.com/) - Device teardowns
+- [GitHub](https://github.com/) - Code and research
 
 ## Typical Lab Setup
 
