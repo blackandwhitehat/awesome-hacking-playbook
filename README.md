@@ -5,7 +5,7 @@
 
 Practical, hands-on hacking playbooks for security researchers, penetration testers, and the curious. Built by practitioners, not academics.
 
-> *"Why build out notes for myself and hoard that? Let's create something that's a really good resource for the community."*
+> *"Let's build better notes as a community."* -♥️🐼
 
 ## Playbooks
 
