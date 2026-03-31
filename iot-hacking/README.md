@@ -1,28 +1,37 @@
-# IoT/Hardware Hacking Playbook
+# 🔌 IoT/Hardware Hacking Playbook
 
-Welcome to the Hardware Hacking with Linux field manual. This playbook is your guide to extracting, analyzing, and modifying firmware on embedded devices using Linux, Raspberry Pi, and specialized tools.
+A practical guide to hardware hacking with Linux. Built from real-world embedded device testing experience and community contributions.
 
-## What You'll Learn
+## Table of Contents
 
-This playbook covers the complete hardware hacking workflow:
-
-- **Physical teardown** of devices and board identification
-- **OSINT techniques** for chip identification and datasheet hunting
-- **Serial interfaces** (UART) for boot console access
-- **SPI flash** dumping and firmware extraction
-- **Debug interfaces** (SWD/JTAG) for firmware access and modification
-- **Firmware analysis** with Ghidra and IDA Pro
-- **Lab setup** and tool recommendations
+1. [Introduction](./01-introduction.md)  -  Why hardware hacking matters
+2. [Tools and Equipment](./02-tools.md)  -  Building your hardware hacking toolkit
+3. [Linux and Raspberry Pi Setup](./03-linux-setup.md)  -  Setting up your hacking platform
+4. [The Hardware Hacking Process](./04-process.md)  -  Step-by-step methodology
+5. [OSINT for Hardware](./05-osint.md)  -  Finding datasheets and documentation
+6. [UART](./06-uart.md)  -  Serial boot consoles and debug output
+7. [SPI Flash](./07-spi.md)  -  Dumping firmware from flash chips
+8. [SWD and JTAG](./08-swd-jtag.md)  -  Debugging and control interfaces
+9. [Firmware Analysis](./09-firmware-analysis.md)  -  From binary to code
+10. [Lab Setup](./lab-setup.md)  -  Build your own test environment
+11. [Tools](./tools.md)  -  Hardware and software toolkit
+12. [Resources](./resources.md)  -  Links, references, further reading
 
 ## Who This Is For
-
-This playbook is for:
 
 - Security researchers and bug bounty hunters
 - Embedded systems enthusiasts
 - IoT device owners who want to understand their hardware
 - Conference badge hackers
 - Anyone curious about how devices really work
+
+## Background
+
+IoT devices run on embedded processors with debug interfaces left exposed, firmware stored in readable flash chips, and serial consoles waiting for a connection. If you can open the case, you can usually get root.
+
+The same techniques that work on a $5 smart plug work on industrial controllers, medical devices, and automotive ECUs. UART, SPI, SWD, and JTAG are everywhere.
+
+Every new connected device is another target. More devices = more attack surface.
 
 ## Important Disclaimer
 
@@ -34,18 +43,15 @@ This knowledge can be used for both good and bad purposes. Use it ethically:
 - Build things, make them better, help make the world safer
 - Do not use this to cause harm
 
-## How To Use This Playbook
+## Contributing
 
-Start with the introduction to understand your targets and goals, then work through the tools section to build your kit. Follow the process guide step-by-step for your first hardware hack. Jump to specific chapters (UART, SPI, SWD) as needed for your target device.
+See the [main contribution guide](../README.md#-how-to-contribute). For IoT/hardware-specific content, we especially welcome:
 
-Chapters include command syntax and examples where available. This playbook is a living document and some sections are still being expanded.
-
-## Quick Links
-
-- **First Time?** Read [01-introduction.md](01-introduction.md)
-- **Building Your Lab?** See [lab-setup.md](lab-setup.md)
-- **Need Tools?** Check [tools.md](tools.md)
-- **Finding Datasheets?** Look at [05-osint.md](05-osint.md)
+- Real-world device teardown writeups
+- New tool discoveries or reviews
+- Protocol analysis and chip documentation
+- Lab setup guides and equipment reviews
+- Firmware extraction walkthroughs
 
 ## Attribution
 
@@ -54,7 +60,3 @@ This playbook is based on "Hardware Hacking with Linux" by John "Panda" Aff, pre
 ## License
 
 CC BY-SA 4.0 - You are free to share and adapt this content with attribution.
-
----
-
-*"It's okay to take things apart."* - Hardware hackers everywhere

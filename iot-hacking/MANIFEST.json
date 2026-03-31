@@ -1,18 +1,73 @@
 {
   "id": "iot-hacking",
   "title": "IOT HACKING PLAYBOOK",
-  "icon": "🔌",
+  "icon": "\ud83d\udd0c",
   "description": "Hardware hacking with Linux. UART, SPI, SWD, firmware extraction and analysis.",
   "chapters": [
-    {"file": "README.md", "title": "Overview", "num": "00"},
-    {"file": "01-introduction.md", "title": "Introduction to Hardware Hacking", "num": "01"},
-    {"file": "02-tools.md", "title": "Hardware Hacking Tools and Equipment", "num": "02"},
-    {"file": "03-linux-setup.md", "title": "Linux and Raspberry Pi Setup for Hardware Hacking", "num": "03"},
-    {"file": "04-process.md", "title": "The Hardware Hacking Process", "num": "04"},
-    {"file": "05-osint.md", "title": "OSINT for Hardware: Finding Datasheets and Documentation", "num": "05"},
-    {"file": "06-uart.md", "title": "UART - Serial Boot Consoles and Debug Output", "num": "06"},
-    {"file": "07-spi.md", "title": "SPI Flash - Dumping Firmware", "num": "07"},
-    {"file": "08-swd-jtag.md", "title": "SWD and JTAG - Debugging and Control", "num": "08"},
-    {"file": "09-firmware-analysis.md", "title": "Firmware Analysis - From Binary to Code", "num": "09"}
+    {
+      "file": "README.md",
+      "title": "Overview",
+      "num": "00"
+    },
+    {
+      "file": "01-introduction.md",
+      "title": "Introduction to Hardware Hacking",
+      "num": "01"
+    },
+    {
+      "file": "02-tools.md",
+      "title": "Hardware Hacking Tools and Equipment",
+      "num": "02"
+    },
+    {
+      "file": "03-linux-setup.md",
+      "title": "Linux and Raspberry Pi Setup for Hardware Hacking",
+      "num": "03"
+    },
+    {
+      "file": "04-process.md",
+      "title": "The Hardware Hacking Process",
+      "num": "04"
+    },
+    {
+      "file": "05-osint.md",
+      "title": "OSINT for Hardware: Finding Datasheets and Documentation",
+      "num": "05"
+    },
+    {
+      "file": "06-uart.md",
+      "title": "UART - Serial Boot Consoles and Debug Output",
+      "num": "06"
+    },
+    {
+      "file": "07-spi.md",
+      "title": "SPI Flash - Dumping Firmware",
+      "num": "07"
+    },
+    {
+      "file": "08-swd-jtag.md",
+      "title": "SWD and JTAG - Debugging and Control",
+      "num": "08"
+    },
+    {
+      "file": "09-firmware-analysis.md",
+      "title": "Firmware Analysis - From Binary to Code",
+      "num": "09"
+    },
+    {
+      "file": "lab-setup.md",
+      "title": "Lab Setup",
+      "num": "10"
+    },
+    {
+      "file": "tools.md",
+      "title": "Tools",
+      "num": "11"
+    },
+    {
+      "file": "resources.md",
+      "title": "Resources",
+      "num": "12"
+    }
   ]
 }
