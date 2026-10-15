@@ -16,7 +16,9 @@
 | Chip clip (SOIC) | Clip onto flash chips | $20-50 | Low (nice to have) |
 | Bus Pirate 6 | Multi-protocol interface | $50-100 | Low (alternative to PiFex) |
 | Oscilloscope | View analog signals | $300+ | Low (professional only) |
-
+| Tigard | Multi-protocol interface | $50 | Low (optional)
+| BLE USB Adapter | Enumerate BLE data | $10 | Low (optional)
+| Zigbee CC253 | Enumerate Zigbee data | $10 | Low (optional)
 ## Software Tools (All Linux)
 
 ### UART Communication
