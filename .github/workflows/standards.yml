@@ -1,4 +1,4 @@
-# standards version 5372249123cf
+# standards version a5ad871b187e
 # Managed by q from NOTES wiki/concepts/standards/tools/ci/ (rollout.py).
 # Do not edit in the repo; change the template and roll it out.
 # Standard: wiki/concepts/standards/web-apps.md and database.md.
@@ -53,8 +53,9 @@ jobs:
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
           HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
-          STANDARDS_DB_PREFIX: ${{ vars.STANDARDS_DB_PREFIX }}
         run: |
+          # Repo-owned settings (never overwritten by the rollout): DB_PREFIX=lp_
+          [ -f .github/standards.env ] && STANDARDS_DB_PREFIX=$(sed -n 's/^DB_PREFIX=//p' .github/standards.env | head -1) && export STANDARDS_DB_PREFIX
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
             BASE=$(git rev-parse "$HEAD~1" 2>/dev/null || git rev-list --max-parents=0 "$HEAD")
           fi
@@ -70,7 +71,10 @@ jobs:
         id: detect
         run: |
           kind=none
-          if [ -f package.json ] && node -e 'const s=require("./package.json").scripts||{}; process.exit(s.test && !/no test specified/.test(s.test) ? 0 : 1)'; then kind=node
+          # Repo-owned settings: TESTS=own-ci means the repo's own workflow runs the tests
+          # (for example because they need a database service). Give the reason in a comment.
+          if [ -f .github/standards.env ] && grep -qx 'TESTS=own-ci' .github/standards.env; then kind=own-ci
+          elif [ -f package.json ] && node -e 'const s=require("./package.json").scripts||{}; process.exit(s.test && !/no test specified/.test(s.test) ? 0 : 1)'; then kind=node
           elif [ -f go.mod ]; then kind=go
           fi
           echo "kind=$kind" >> "$GITHUB_OUTPUT"
@@ -92,6 +96,9 @@ jobs:
       - name: go test
         if: steps.detect.outputs.kind == 'go'
         run: go test ./...
+      - name: Tests run by the repo's own workflow
+        if: steps.detect.outputs.kind == 'own-ci'
+        run: echo "::notice::Tests run in this repo's own CI workflow (.github/standards.env TESTS=own-ci)."
       - name: No test command
         if: steps.detect.outputs.kind == 'none'
         run: echo "::notice::No test command in this repo yet (web-apps.md requires one)."
