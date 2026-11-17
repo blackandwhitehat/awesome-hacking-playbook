@@ -1,0 +1,97 @@
+# standards version 5372249123cf
+# Managed by q from NOTES wiki/concepts/standards/tools/ci/ (rollout.py).
+# Do not edit in the repo; change the template and roll it out.
+# Standard: wiki/concepts/standards/web-apps.md and database.md.
+name: standards
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: standards-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    name: secrets
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Install TruffleHog 3.97.9 (pinned, checksum verified)
+        run: |
+          curl -sSfL -o th.tgz https://github.com/trufflesecurity/trufflehog/releases/download/v3.97.9/trufflehog_3.97.9_linux_amd64.tar.gz
+          echo "40377e6572495412fb9ba0bc21c9401f73b72f1d2afd11b9931bc4a5ed622866  th.tgz" | sha256sum -c -
+          tar -xzf th.tgz trufflehog && sudo mv trufflehog /usr/local/bin/ && rm th.tgz
+      - name: Scan new commits for secrets
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            BASE=$(git rev-parse "$HEAD~1" 2>/dev/null || git rev-list --max-parents=0 "$HEAD")
+          fi
+          bash .github/standards/secret-scan.sh range "$BASE" "$HEAD"
+
+  migrations:
+    name: migrations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Lint changed SQL migrations
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          STANDARDS_DB_PREFIX: ${{ vars.STANDARDS_DB_PREFIX }}
+        run: |
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            BASE=$(git rev-parse "$HEAD~1" 2>/dev/null || git rev-list --max-parents=0 "$HEAD")
+          fi
+          python3 .github/standards/migration_lint.py --diff "$BASE" "$HEAD"
+
+  tests:
+    name: tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Detect test command
+        id: detect
+        run: |
+          kind=none
+          if [ -f package.json ] && node -e 'const s=require("./package.json").scripts||{}; process.exit(s.test && !/no test specified/.test(s.test) ? 0 : 1)'; then kind=node
+          elif [ -f go.mod ]; then kind=go
+          fi
+          echo "kind=$kind" >> "$GITHUB_OUTPUT"
+          [ -f .nvmrc ] && echo "node=$(cat .nvmrc)" >> "$GITHUB_OUTPUT" || echo "node=22" >> "$GITHUB_OUTPUT"
+          echo "test runner: $kind"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        if: steps.detect.outputs.kind == 'node'
+        with:
+          node-version: ${{ steps.detect.outputs.node }}
+      - name: npm test
+        if: steps.detect.outputs.kind == 'node'
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts; else npm install --ignore-scripts --no-audit --no-fund; fi
+          npm test
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        if: steps.detect.outputs.kind == 'go'
+        with:
+          go-version-file: go.mod
+      - name: go test
+        if: steps.detect.outputs.kind == 'go'
+        run: go test ./...
+      - name: No test command
+        if: steps.detect.outputs.kind == 'none'
+        run: echo "::notice::No test command in this repo yet (web-apps.md requires one)."
