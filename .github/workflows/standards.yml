@@ -1,4 +1,4 @@
-# standards version a5ad871b187e
+# standards version 10d1fe0bf87e
 # Managed by q from NOTES wiki/concepts/standards/tools/ci/ (rollout.py).
 # Do not edit in the repo; change the template and roll it out.
 # Standard: wiki/concepts/standards/web-apps.md and database.md.
@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
       - name: Install TruffleHog 3.97.9 (pinned, checksum verified)
         run: |
-          curl -sSfL -o th.tgz https://github.com/trufflesecurity/trufflehog/releases/download/v3.97.9/trufflehog_3.97.9_linux_amd64.tar.gz
+          curl -sSfL --retry 4 --retry-delay 5 --retry-all-errors --max-time 120 -o th.tgz https://github.com/trufflesecurity/trufflehog/releases/download/v3.97.9/trufflehog_3.97.9_linux_amd64.tar.gz
           echo "40377e6572495412fb9ba0bc21c9401f73b72f1d2afd11b9931bc4a5ed622866  th.tgz" | sha256sum -c -
           tar -xzf th.tgz trufflehog && sudo mv trufflehog /usr/local/bin/ && rm th.tgz
       - name: Scan new commits for secrets
