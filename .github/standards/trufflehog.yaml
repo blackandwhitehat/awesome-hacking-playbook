@@ -1,0 +1,46 @@
+# TruffleHog custom detectors for the BambooSec stack.
+# Built-in detectors (800+, including Stripe, GitHub, AWS, Telegram, Slack,
+# Cloudflare, OpenAI, Anthropic) run alongside these. These add the formats
+# the built-ins miss. Any hit from a custom detector fails the check; built-in
+# hits fail when verified live. Owner: panda. Standard: [[dependencies]], [[web-apps]].
+detectors:
+  - name: SupabaseSecretKey
+    keywords: ["sb_secret_"]
+    regex:
+      key: 'sb_secret_[A-Za-z0-9_-]{20,}'
+  - name: SupabaseServiceRoleJWT
+    # Legacy service_role JWT: header {"alg":"HS256","typ":"JWT"}, payload starting {"iss":"supabase" with role service_role.
+    keywords: ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"]
+    regex:
+      key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.eyJpc3MiOiJzdXBhYmFzZSI[A-Za-z0-9_-]*cm9sZSI6InNlcnZpY2Vfcm9sZS[A-Za-z0-9_-]*\.[A-Za-z0-9_-]{20,}'
+  - name: SupabaseDatabaseURL
+    # Postgres connection string with an inline password to a Supabase host.
+    keywords: ["supabase.co", "supabase.com"]
+    regex:
+      key: 'postgres(?:ql)?://[A-Za-z0-9_.%-]+:[^@\s''"]{8,}@[A-Za-z0-9.-]*supabase\.(?:co|com)'
+  - name: SupabaseJWTSecret
+    keywords: ["JWT_SECRET", "jwt_secret"]
+    regex:
+      key: '(?i)(?:SUPABASE_)?JWT_SECRET\s*[=:]\s*[''"]?([A-Za-z0-9+/=_-]{32,})'
+  - name: GuardHMACSecret
+    keywords: ["GUARD_HMAC", "HMAC_SECRET", "guard_hmac"]
+    regex:
+      key: '(?i)(?:GUARD_)?HMAC(?:_V2)?_SECRET\s*[=:]\s*[''"]?([A-Za-z0-9+/=_-]{24,})'
+  - name: RevenueCatSecretKey
+    keywords: ["revenuecat", "REVENUECAT", "RevenueCat"]
+    regex:
+      key: '(?i)revenuecat[A-Za-z0-9_ ]{0,30}[=:]\s*[''"]?(sk_[A-Za-z0-9]{24,})'
+  - name: CloudflareGlobalKeyAssignment
+    keywords: ["CF_API_KEY", "CLOUDFLARE_API_KEY", "X-Auth-Key", "cf-global-key"]
+    regex:
+      key: '(?i)(?:CF_API_KEY|CLOUDFLARE_API_KEY|X-Auth-Key)[''"]?\s*[=:,]\s*[''"]?([a-f0-9]{37})\b'
+  - name: TelegramBotTokenAssignment
+    keywords: ["bot"]
+    regex:
+      key: '\b[0-9]{8,10}:AA[A-Za-z0-9_-]{33}\b'
+  - name: PrivateKeyBlock
+    # Header followed by real key material (40+ base64 chars), so code that
+    # strips PEM headers and TLS-library header constants do not match.
+    keywords: ["PRIVATE KEY-----"]
+    regex:
+      key: '-----BEGIN (?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY-----(?:\\n|\\r|\s)+[A-Za-z0-9+/]{40,}'
